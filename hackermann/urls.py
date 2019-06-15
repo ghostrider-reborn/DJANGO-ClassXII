@@ -22,4 +22,5 @@ urlpatterns = [
     path('', views.homepage, name='home'),
     path('addemployee/', views.addEmployee, name='addemployee'),
     path('employee-details/', views.displayEmployees, name='employee-details'),
+    path('remove-employee/', views.removeEmployee, name='remove-employee'),
 ]
