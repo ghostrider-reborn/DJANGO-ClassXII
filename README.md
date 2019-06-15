@@ -13,7 +13,7 @@ TODO:
 
 How to launch the server?
 ----
-* Assuming you have python3 and pip installed, install virtual env: `pip install virtualenv`
+* Assuming you have python3 and pip installed, install virtual env and django: `pip install virtualenv django`
 * Make a new folder which will contain the project stuff. Open CMD/terminal there and run `virtualenv venv` 
 * Inside that folder clone this repository to a subfolder namely 'hackermann': `git clone https://github.com/ghostrider-reborn/DJANGO-ClassXII hackermann`
 * Activate virtualenv by running `venv\scripts\activate` OR in case of Linux: `source venv/scripts/activate`
