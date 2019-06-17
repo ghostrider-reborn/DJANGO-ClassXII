@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name='home'),
     path('addemployee/', views.addEmployee, name='addemployee'),
-    path('employee-details/', views.displayEmployees, name='employee-details'),
+    path('employee-details-csv/', views.displayEmployeesCSV, name='employee-details-csv'),
     path('remove-employee/', views.removeEmployee, name='remove-employee'),
 ]

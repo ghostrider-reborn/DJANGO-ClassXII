@@ -23,7 +23,7 @@ def addEmployee(request):
 
     return render(request, 'employee.html')
 
-def displayEmployees(request):
+def displayEmployeesCSV(request):
     ''' Display details of all employees from the employee CSV, in a table '''
     if not os.path.isfile('employee_data.csv'):
         return render(request, 'result.html', {'msg':'Employee CSV not found!! Have you added any employees yet?', 'title':'ERROR!'})
@@ -35,7 +35,7 @@ def displayEmployees(request):
         reader = csv.DictReader(emp_csv)
         data = {dict(i)['name']:dict(i)['emp_id'] for i in reader}
 
-    return render(request, 'employee-details.html', {'data':data})
+    return render(request, 'employee-details-csv.html', {'data':data})
 
 def removeEmployee(request):
     ''' Remove an employee's record from the employee CSV given the name or employee ID '''

@@ -10,10 +10,10 @@
 		<th>Employee Name</th>
 		<th>Employee ID</th>
 	</tr>
-	{% for employee in employees %}
+	{% for i,j in data.items %}
 	<tr>
-		<td>{{ employee.name }}</td>
-		<td>{{ employee.empid }}</td>
+		<td>{{i}}</td>
+		<td>{{j}}</td>
 	</tr>
 	{% endfor %}
 </table></p>
