@@ -23,7 +23,7 @@ def addEmployee(request):
 
     return render(request, 'employee.html')
 
-def displayEmployeesCSV(request):
+def displayEmployees(request):
     ''' Display details of all employees from the employee CSV, in a table '''
     if not os.path.isfile('employee_data.csv'):
         return render(request, 'result.html', {'msg':'Employee CSV not found!! Have you added any employees yet?', 'title':'ERROR!'})

@@ -15,12 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from employee import views
+from employee import views as views_csv
+from employee_v2 import views
 
+''' CSV-based employee app (deprecated)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage, name='home'),
-    path('addemployee/', views.addEmployee, name='addemployee'),
-    path('employee-details-csv/', views.displayEmployeesCSV, name='employee-details-csv'),
-    path('remove-employee/', views.removeEmployee, name='remove-employee'),
+    path('', views_csv.homepage, name='home'),
+    path('addemployee/', views_csv.addEmployee, name='addemployee'),
+    path('remove-employee/', views_csv.removeEmployee, name='remove-employee'),
+    path('employee-details-csv/', views_csv.displayEmployees, name='employee-details-csv'), '''
+
+# SQLite-based employee app
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('login/', views.login, name='login'),
+    path('adminpage/', views.adminPage, name='adminpage'),
+    path('add-employee/', views.addEmployee, name='add-employee'),
+    path('employee-details/', views.displayEmployees, name='employee-details'),
 ]
