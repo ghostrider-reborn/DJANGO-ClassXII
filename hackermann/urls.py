@@ -31,7 +31,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
     path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout'),
     path('adminpage/', views.adminPage, name='adminpage'),
     path('add-employee/', views.addEmployee, name='add-employee'),
     path('employee-details/', views.displayEmployees, name='employee-details'),
+    path('employee-details-csv/', views_csv.displayEmployees, name='employee-details-csv'),
 ]
