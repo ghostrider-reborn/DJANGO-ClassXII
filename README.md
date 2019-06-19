@@ -1,14 +1,17 @@
 # DJANGO-ClassXII
 My 12th grade computer science Django practice project, named "hackermann".
 ____
-Currently consists of a homepage and W.I.P app named 'employee' with the following features:
-* Add an employee (employee name and employee ID), which gets saved to a CSV
+Currently consists of an app named 'employee' with a homepage and an admin page following features:
+* Add an employee (employee name and employee ID), which gets saved to the `employee-data.sqlite3` database
 * List all employees by their names and IDs in a table
+
+The admin page can be accessed by logging in using the usernames & passwords which are stored as a dictionary in `views.py` of the employee_v2 app.
+
+This project also consists of a deprecated app 'employee' (v1) which uses CSV to store employee data.
 
 TODO:
 * Implement removal of an employee by their name or ID
 * Implement searching an employee by their name or ID
-* Move to SQLite DBs rather than stupid CSVs
 * Add more employee data like date of joining, salary, mobile number etc
 
 How to launch the server?
