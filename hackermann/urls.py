@@ -36,4 +36,5 @@ urlpatterns = [
     path('add-employee/', views.addEmployee, name='add-employee'),
     path('employee-details/', views.displayEmployees, name='employee-details'),
     path('employee-details-csv/', views_csv.displayEmployees, name='employee-details-csv'),
+    path('remove-employee/', views.removeEmployee, name='remove-employee'),
 ]
