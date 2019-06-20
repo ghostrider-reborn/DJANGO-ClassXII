@@ -3,9 +3,17 @@
 
 <body background="http://angsila.cs.buu.ac.th/~58160632/887371/lab02/h5.jpg">
 
-<h2><u>Remove an employee!</u></h2>
+<h2><u>Search for an employee!</u></h2>
 <img src="https://i.kym-cdn.com/entries/icons/original/000/021/807/4d7.png" alt="HACKERMAN" width="200" height="200">
 <p>
+  <form action="#" method="post">{% csrf_token %}
+    Employee Name: <input type="text" name="name">
+    <input type="checkbox" name="case_sens">Case-sensitive&nbsp;
+    <input type="submit" value="Submit!">
+  </form>
+
+  <b><u>OR</b></u><br><br>
+
   <form action="#" method="post">{% csrf_token %}
     Employee ID: <input type="text" name="emp_id">
     <input type="submit" value="Submit!">

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from employee import views as views_csv
+#from employee import views as views_csv
 from employee_v2 import views
 
 ''' CSV-based employee app (deprecated)
@@ -35,6 +35,6 @@ urlpatterns = [
     path('adminpage/', views.adminPage, name='adminpage'),
     path('add-employee/', views.addEmployee, name='add-employee'),
     path('employee-details/', views.displayEmployees, name='employee-details'),
-    path('employee-details-csv/', views_csv.displayEmployees, name='employee-details-csv'),
     path('remove-employee/', views.removeEmployee, name='remove-employee'),
+    path('search-employee/', views.searchEmployee, name='search-employee'),
 ]

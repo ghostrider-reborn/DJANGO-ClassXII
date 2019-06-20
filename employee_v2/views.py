@@ -63,19 +63,23 @@ def removeEmployee(request):
         except employee.DoesNotExist: return render(request, 'result.html', {'msg':"Specified employee not found!", 'title':'ERROR!'})
     return render(request, 'remove-employee.html')
 
-'''def searchEmployee(request):
+def searchEmployee(request):
     global isLoggedIn
     if not isLoggedIn: return render(request, 'result.html', {'msg':'Login required to access this page!', 'title':'ERROR!'})
     if request.method == "POST":
         data = request.POST
         if 'name' in data:
-            names = []
+            employees = []
             for emp in employee.objects.all():
-                if any(data['name'].lower() == i.lower() for i in str(emp.name).split()): names.append(emp.name)
-            if names == []: return render(request, 'result.html', {'msg':"No search results!", 'title':'ERROR!'})
-            else: emp_ids = employee.objects.all().filter(name=emp.name).emp_id
-            return render(request, 'search-results.html', {'names':names, 'emp_ids':emp_ids})
+                if 'case_sens' not in data:
+                    if any(data['name'].lower() == i.lower() for i in str(emp.name).split()): employees.append(emp)
+                elif any(data['name'] == i for i in str(emp.name).split()): employees.append(emp)
+            if employees == []: return render(request, 'result.html', {'msg':"No search results!", 'title':'ERROR!'})
+            return render(request, 'search-results.html', {'employees':employees})
         else:
             try:
-                names = (employee.objects.get(emp_id = emp_id), )
-                emp_ids = (emp)'''
+                employees = employee.objects.all().filter(emp_id = int(data['emp_id']))
+                if list(employees) == []: return render(request, 'result.html', {'msg':"No search results!", 'title':'ERROR!'})
+                return render(request, 'search-results.html', {'employees':employees})
+            except: return render(request, 'result.html', {'msg':"No search results!", 'title':'ERROR!'})
+    return render(request, 'search-employee.html')
