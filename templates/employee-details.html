@@ -7,13 +7,15 @@
 
 <p><table border="1" cellpadding="3">
 	<tr>
-		<th>Employee Name</th>
 		<th>Employee ID</th>
+		<th>Employee Name</th>
+		<th>Employee Salary</th>
 	</tr>
 	{% for employee in employees %}
 	<tr>
-		<td>{{ employee.name }}</td>
 		<td>{{ employee.emp_id }}</td>
+		<td>{{ employee.name }}</td>
+		<td>{{ employee.salary }}</td>
 	</tr>
 	{% endfor %}
 </table></p>

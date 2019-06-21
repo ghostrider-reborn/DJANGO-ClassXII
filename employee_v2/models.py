@@ -4,3 +4,4 @@ from django.db import models
 class employee(models.Model):
     emp_id = models.IntegerField()
     name = models.CharField(max_length = 50)
+    salary = models.IntegerField()

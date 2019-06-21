@@ -31,10 +31,10 @@ def addEmployee(request):
     if not isLoggedIn: return render(request, 'result.html', {'msg':'Login required to access this page!', 'title':'ERROR!'})
     if request.method == "POST":
         data = request.POST
-        name, emp_id = data['name'], data['emp_id']
+        name, emp_id, salary = data['name'], data['emp_id'], data['salary']
         if any(int(emp_id) == emp.emp_id for emp in employee.objects.all()):
             return render(request, 'result.html', {'msg':'Employee ID already exists!', 'title':'ERROR!'})
-        new_emp = employee(name=name, emp_id=emp_id)
+        new_emp = employee(name=name, emp_id=emp_id, salary=salary)
         new_emp.save()
         return render(request, 'result.html', {'msg':'Employee added succesfully!', 'title':'SUCCESS!'})
     return render(request, 'employee.html')
