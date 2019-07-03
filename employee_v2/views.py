@@ -31,8 +31,9 @@ def addEmployee(request):
     if not isLoggedIn: return render(request, 'result.html', {'msg':'Login required to access this page!', 'title':'ERROR!'})
     if request.method == "POST":
         data = request.POST
-        name, emp_id, salary = data['name'], data['emp_id'], data['salary']
-        if any(int(emp_id) == emp.emp_id for emp in employee.objects.all()):
+        name, emp_id, salary = data['name'], int(data['emp_id']), data['salary']
+        if salary == '': salary = 0
+        if any(emp_id == emp.emp_id for emp in employee.objects.all()):
             return render(request, 'result.html', {'msg':'Employee ID already exists!', 'title':'ERROR!'})
         new_emp = employee(name=name, emp_id=emp_id, salary=salary)
         new_emp.save()
@@ -43,6 +44,7 @@ def displayEmployees(request):
     global isLoggedIn
     if not isLoggedIn: return render(request, 'result.html', {'msg':'Login required to access this page!', 'title':'ERROR!'})
     employees = employee.objects.all()
+    if list(employees) == []: return render(request, 'result.html', {'msg':"Employee database is empty!", 'title':'ERROR!'})
     return render(request, 'employee-details.html', {'employees':employees})
 
 def logout(request):

@@ -1,11 +1,12 @@
 <html>
 <title>ADMIN - HACKERMANN</title>
-<body background="http://angsila.cs.buu.ac.th/~58160632/887371/lab02/h5.jpg">
+{% load static %}
+<body background="{% static "background.jpg" %}">
   <center>
 
   <p><h2><u>EMPLOYEE - ADMIN TOOLS</u></h2></p>
 
-  <img src="https://media0.giphy.com/media/5TiS8zZx1mc3m/giphy.gif" alt="HACKERMAN">
+  <img src="{% static "hackerman.gif" %}" alt="HACKERMAN">
 
   <p>
   	<input type="button" onclick="location.href='/add-employee/';" value="Add an employee"/>&nbsp;

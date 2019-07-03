@@ -9,11 +9,10 @@ Currently consists of an app named 'employee' with a homepage, and an admin page
 
 The admin page can be accessed by logging in using the usernames & passwords which are stored as a dictionary in `views.py` of the employee_v2 app.
 
-This project also consists of a deprecated app 'employee' (v1) which uses CSV to store employee data.
+The 'employee-csv' branch of this repo also consists of a deprecated app 'employee' (v1) which uses CSV to store employee data.
 
-TODO:
-* Implement changing name or ID of an existing employee
-* Add more employee data like date of joining, salary, mobile number etc
+**TODO:**
+* Implement changing name, ID or salary of an existing employee
 
 How to launch the server?
 ----

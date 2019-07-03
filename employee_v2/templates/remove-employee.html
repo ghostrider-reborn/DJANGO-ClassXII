@@ -1,10 +1,11 @@
 <html>
 <title>REMOVE AN EMPLOYEE</title>
+{% load static %}
 
-<body background="http://angsila.cs.buu.ac.th/~58160632/887371/lab02/h5.jpg">
+<body background="{% static "background.jpg" %}">
 
 <h2><u>Remove an employee!</u></h2>
-<img src="https://i.kym-cdn.com/entries/icons/original/000/021/807/4d7.png" alt="HACKERMAN" width="200" height="200">
+<img src="{% static "hackerman-mini.png" %}" alt="HACKERMAN" width="200" height="200">
 <p>
   <form action="#" method="post">{% csrf_token %}
     Employee ID: <input type="text" name="emp_id">
